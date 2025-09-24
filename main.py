@@ -83,7 +83,7 @@ def format_cbr(rates):
     eur = rates["EUR"]["Value"]
     kzt = rates["KZT"]["Value"]
     rub = 1
-    today = datetime.now().strftime("%d.%m.%Y")
+    today = datetime.now(pytz.timezone("Asia/Almaty")).strftime("%d.%m.%Y")
     return (
         f"📅 Курс ЦБ РФ ({today})\n\n"
         f"🇺🇸 1 USD | {usd:.2f} ₽\n"
@@ -98,7 +98,7 @@ def format_nbk(rates):
     eur = rates["EUR"]
     rub = rates["RUB"]
     kzt = 1
-    today = datetime.now().strftime("%d.%m.%Y")
+    today = datetime.now(pytz.timezone("Asia/Almaty")).strftime("%d.%m.%Y")
     return (
         f"📅 Курс НБ РК ({today})\n\n"
         f"🇺🇸 1 USD | {usd:.2f} ₸\n"
@@ -109,7 +109,7 @@ def format_nbk(rates):
 
 # --- Остальные валюты по НБ РК ---
 def format_other_nbk(rates):
-    today = datetime.now().strftime("%d.%m.%Y")
+    today = datetime.now(pytz.timezone("Asia/Almaty")).strftime("%d.%m.%Y")
     other = {
         "🇧🇾": "BYN",
         "🇺🇦": "UAH",
